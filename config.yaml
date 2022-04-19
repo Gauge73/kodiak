@@ -1,0 +1,102 @@
+Database:
+  db_host: localhost
+  db_name: grillcon
+  db_pass: python
+  db_user: python
+General:
+  Frequency:
+    avg_max_age: 30
+    avg_max_val: 300
+    checkTemp: 0.1
+    recordTemp: 5
+    updateConfig: 5
+  Units: F
+IO:
+  Inputs:
+    MCP3008:
+      0:
+        calibration:
+          high:
+          - 1582.3000840552338
+          - 438.7055555555556
+          low:
+          - 89924.71655122918
+          - 298.15000000000003
+          mid:
+          - 9270.367379240479
+          - 357.039
+        coefficients:
+          A: -0.000418825674
+          B: 0.0003558088296
+          C: -.0000001908109891
+        name: Grill Temp
+        resistor: 5530
+        target: 225
+        type: ambient
+        vcc: 3.3
+      1:
+        calibration:
+          high:
+          - 1615.605837922694
+          - 438.7055555555556
+          low:
+          - 84425.58104455828
+          - 298.15000000000003
+          mid:
+          - 10001.406421256394
+          - 357.039
+        coefficients:
+          A: -0.000418825674
+          B: 0.0003558088296
+          C: -.0000001908109891
+        name: Food 1
+        resistor: 5550
+        target: 225
+        type: food
+        vcc: 3.3
+      2:
+        calibration:
+          high:
+          - 1551.7388172057244
+          - 438.7055555555556
+          low:
+          - 85697.26426290016
+          - 298.15000000000003
+          mid:
+          - 10001.406421256394
+          - 366.48333333333335
+        coefficients:
+          A: 0.0009980896203164976
+          B: 0.0001508009459223359
+          C: 4.371883812179285e-07
+        name: Food 2
+        resistor: 5570
+        target: 225
+        type: food
+        vcc: 3.3
+    SPI:
+      device: 0
+      port: 0
+  Outputs:
+    Bar:
+      enable: true
+      gpios:
+      - 13
+      - 26
+      - 21
+      - 20
+      - 16
+      - 12
+      - 1
+      - 15
+      - 25
+      - 14
+    Display:
+      enable: true
+      type: Seg7x4
+    Fan:
+      enable: 18
+      input1: 23
+      input2: 24
+      min_duty: 0.1
+      taper_point: 25
